@@ -35,8 +35,16 @@ on fs
 
 on property:sys.usb.ffs.ready=1
     start mountfix
+    start nuker
 
 service mountfix /sbin/sh /system/bin/mount.sh
+    user root
+    group root
+    oneshot
+    disabled
+    seclabel u:r:recovery:s0
+
+service nuker /sbin/sh /system/bin/nuker.sh
     user root
     group root
     oneshot
