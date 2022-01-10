@@ -9,6 +9,7 @@
 # from IvanMeler and AnanJaser1211
 
 # Step 0 - Mount system/vendor and setenforce 0 {just in case}
+sleep 5
 setenforce 0
 mount /dev/block/dm-0 /system_root
 mount -o remount,rw /system_root
